@@ -17,17 +17,20 @@ function generateId() {
     return id++
 }
 
-
+/**
+ * @param head
+ */
 function Node(head) {
     this.id = 0;
     this.head = head;
     this.tail = 0;
 }
 
-
+// TODO: remove prevNode args if possible
 function LinkedListInsertion(node, prevNode, insertValue) {
     if (node.tail >= 1) {
         node.head = insertValue;
+        // Attach tail of previous node to id of current node and increase and append previous node tail by 1.
         node.id = prevNodeTail;
         prevNodeTail = prevNodeTail + 1;
         node.tail = prevNodeTail;
