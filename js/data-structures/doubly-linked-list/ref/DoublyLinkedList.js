@@ -1,3 +1,6 @@
+import DoublyLinkedListNode from './DoublyLinkedListNode';
+import Comparator from '../../../utils/comparator/Comparator'
+
 export default class DoublyLinkedList {
     /**
      * @param {Function} [comparatorFunction]
