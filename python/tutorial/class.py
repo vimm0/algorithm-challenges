@@ -39,3 +39,18 @@ class Complex:
 
 x = Complex(3.0, -4.5)
 print(x.r, x.i)  # (3.0, -4.5)
+
+
+class Dog:
+    kind = 'canine'  # class variable shared by all instances
+
+    def __init__(self, name):
+        self.name = name  # instance variable unique to each instance
+
+
+d = Dog('Fido')
+e = Dog('Buddy')
+print(d.kind)  # 'canine' # shared by all dogs
+print(e.kind)  # 'canine' # shared by all dogs
+print(d.name)  # 'Fido' # unique to d
+print(e.name)  # 'Buddy' # unique to e
