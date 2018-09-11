@@ -30,6 +30,9 @@ while x.counter < 10:
 print(x.counter)
 del x.counter
 
+print(x.f)
+print(MyClass.f)
+
 
 class Complex:
     def __init__(self, realpart, imagpart):
