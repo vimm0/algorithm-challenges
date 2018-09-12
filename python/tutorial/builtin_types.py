@@ -36,3 +36,16 @@ print(r[:5])  # range(0, 10, 2)
 print(r[-1])  # 18
 print(str(b'Zoot!'))  # "b'Zoot!'"
 print('01\t012\t0123\t01234'.expandtabs())  # '01      012     0123    01234'
+
+
+class Default(dict):
+    def __missing__(self, key):
+        return key
+
+
+print('{name} was born in {country}'.format_map(Default(name='Guido')))  # 'Guido was born in country'
+print('   spacious   '.lstrip())  # 'spacious   '
+print('www.example.com'.lstrip('cmowz.'))  # 'example.com'
+print('1,2,3'.split(','))  # ['1', '2', '3']
+print('1,2,3'.split(',', maxsplit=1))  # ['1', '2,3']
+print('1,2,,3,'.split(','))  # ['1', '2', '', '3', '']
