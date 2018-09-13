@@ -49,3 +49,55 @@ print('www.example.com'.lstrip('cmowz.'))  # 'example.com'
 print('1,2,3'.split(','))  # ['1', '2', '3']
 print('1,2,3'.split(',', maxsplit=1))  # ['1', '2,3']
 print('1,2,,3,'.split(','))  # ['1', '2', '', '3', '']
+
+import re
+
+
+def title_case(s):
+    return re.sub(r"[A-Za-z]+('[A-Za-z]+)?",
+                  lambda mo: mo.group(0)[0].upper() +
+                             mo.group(0)[1:].lower(), s)
+
+
+print(title_case("they're bill's friends."))  # "They're Bill's Friends."
+
+# Binary Sequence Types
+print(bytes.fromhex('2Ef0 F1f2  '))  # b'.\xf0\xf1\xf2'
+print(b'\xf0\xf1\xf2'.hex())  # 'f0f1f2'
+print(bytearray.fromhex('2Ef0 F1f2  '))  # bytearray(b'.\xf0\xf1\xf2')
+print(bytearray(b'\xf0\xf1\xf2').hex())  # 'f0f1f2'
+print(b'read this short text'.translate(None, b'aeiou'))  # b'rd ths shrt txt'
+
+import array
+
+a = array.array('l', [1, 2, 3])
+x = memoryview(a)
+print(x.format)  # 'l'
+print(x.itemsize)  # 8
+print(len(x))  # 3
+print(x.nbytes)  # 24
+y = x.cast('B')
+print(y.format)  # 'B'
+print(y.itemsize)  # 1
+print(len(y))  # 24
+print(y.nbytes)  # 24
+
+a = dict(one=1, two=2, three=3)
+b = {'one': 1, 'two': 2, 'three': 3}
+c = dict(zip(['one', 'two', 'three'], [1, 2, 3]))
+d = dict([('two', 2), ('one', 1), ('three', 3)])
+e = dict({'three': 3, 'one': 1, 'two': 2})
+print(a == b == c == d == e)  # True
+
+d = {"one": 1, "two": 2, "three": 3, "four": 4}
+print(d)  # {'one': 1, 'two': 2, 'three': 3, 'four': 4}
+list(d)  # ['one', 'two', 'three', 'four']
+list(d.values())  # [1, 2, 3, 4]
+d["one"] = 42
+print(d)  # {'one': 42, 'two': 2, 'three': 3, 'four': 4}
+del d["two"]
+d["two"] = None
+print(d)  # {'one': 42, 'three': 3, 'four': 4, 'two': None}
+
+# pairs = zip(d.values(), d.keys())
+# pairs = [(v, k) for (k, v) in d.items()]
