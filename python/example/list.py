@@ -16,7 +16,7 @@ jvm_langs.append('Clojure')
 
 # Let's iterate across the list
 for lang in jvm_langs:
-    print lang
+    print(lang)
 
 # Can we get the 3rd element of the list ?
 print("The 3rd JVM language is ", jvm_langs[2])
