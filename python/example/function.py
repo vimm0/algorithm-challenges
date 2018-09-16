@@ -5,8 +5,10 @@ minCalled = 0
 
 
 def max_val(a, b):
-    '''Returns the maximum of the specified arguments.
-    Arguments must be numbers'''
+    """
+    Returns the maximum of the specified arguments.
+    Arguments must be numbers
+    """
 
     global maxCalled
     maxCalled = maxCalled + 1
@@ -20,8 +22,10 @@ def max_val(a, b):
 
 
 def min_val(a, b):
-    '''Returns the minimum of the specified arguments.
-    Arguments must be numbers'''
+    """
+    Returns the minimum of the specified arguments.
+    Arguments must be numbers
+    """
 
     global minCalled
     minCalled = minCalled + 1
