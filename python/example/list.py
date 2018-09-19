@@ -26,3 +26,8 @@ print("The 2nd to 4th JVM languages are ", jvm_langs[1:4])
 print("let's sort these languages")
 jvm_langs.sort()
 print(jvm_langs)
+
+listone = [1, 2, 3]
+listtwo = [4, 5, 6]
+
+mergedlist = listone + listtwo  # [1,2,3,4,5,6]
