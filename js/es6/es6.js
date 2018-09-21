@@ -21,3 +21,56 @@ let {occupation, father} = luke;
 
 console.log(occupation); // 'jedi'
 console.log(father); // 'anakin'
+
+// Exporting in CommonJS
+module.exports = 1;
+module.exports = {foo: 'bar'};
+module.exports = ['foo', 'bar'];
+module.exports = function bar() {
+};
+
+// Exporting in ES6
+export let name = 'David';
+export let age = 25;​​
+
+// exporting a list of objects:
+
+function sumTwo(a, b) {
+    return a + b;
+}
+
+function sumThree(a, b, c) {
+    return a + b + c;
+}
+
+export {sumTwo, sumThree};
+
+// export functions, objects and values by simply export keyword
+export function sumTwo(a, b) {
+    return a + b;
+}
+
+export function sumThree(a, b, c) {
+    return a + b + c;
+}
+
+// export default bindings:
+
+function sumTwo(a, b) {
+    return a + b;
+}
+
+function sumThree(a, b, c) {
+    return a + b + c;
+}
+
+let api = {
+    sumTwo,
+    sumThree
+};
+
+export default api;
+
+/* Which is the same as
+ * export { api as default };
+ */
