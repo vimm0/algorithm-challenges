@@ -22,6 +22,7 @@ let {occupation, father} = luke;
 console.log(occupation); // 'jedi'
 console.log(father); // 'anakin'
 
+
 // Exporting in CommonJS
 module.exports = 1;
 module.exports = {foo: 'bar'};
@@ -74,3 +75,21 @@ export default api;
 /* Which is the same as
  * export { api as default };
  */
+
+// Importing in ES6
+
+// import 'underscore';
+// import {sumTwo, sumThree} from 'math/addition'; // Similar to Python
+
+//  rename the named imports:
+// import {
+//     sumTwo as addTwoNumbers,
+//     sumThree as sumThreeNumbers
+// } from 'math/addition';
+
+// import all the things (also called namespace import):
+// import * as util from 'math/addition';
+
+// import a list of values from a module:
+// import * as additionUtil from 'math/addition';
+// const { sumTwo, sumThree } = additionUtil;
