@@ -22,3 +22,26 @@ def test_integer_numbers():
     assert isinstance(positive_integer, int)
     assert isinstance(negative_integer, int)
     assert isinstance(big_integer, int)
+
+
+def test_booleans():
+    """Boolean
+    Booleans represent the truth values False and True. The two objects representing the values
+    False and True are the only Boolean objects. The Boolean type is a subtype of the integer type,
+    and Boolean values behave like the values 0 and 1, respectively, in almost all contexts, the
+    exception being that when converted to a string, the strings "False" or "True" are returned,
+    respectively.
+    """
+
+    true_boolean = True
+    false_boolean = False
+
+    assert true_boolean
+    assert not false_boolean
+
+    assert isinstance(true_boolean, bool)
+    assert isinstance(false_boolean, bool)
+
+    # Let's try to cast boolean to string.
+    assert str(true_boolean) == "True"
+    assert str(false_boolean) == "False"
