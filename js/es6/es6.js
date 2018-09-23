@@ -119,3 +119,7 @@ func1(value1)
     .then(func5, value5 => {
         // Do something with value 5
     });
+
+new Promise((resolve, reject) =>
+    reject(new Error('Failed to fulfill Promise')))
+    .catch(reason => console.log(reason));
