@@ -93,3 +93,29 @@ export default api;
 // import a list of values from a module:
 // import * as additionUtil from 'math/addition';
 // const { sumTwo, sumThree } = additionUtil;
+
+
+// Promises
+// (callback hell):
+
+func1(function (value1) {
+    func2(value1, function (value2) {
+        func3(value2, function (value3) {
+            func4(value3, function (value4) {
+                func5(value4, function (value5) {
+                    // Do something with value 5
+                });
+            });
+        });
+    });
+});
+
+// Into vertical code:
+
+func1(value1)
+    .then(func2)
+    .then(func3)
+    .then(func4)
+    .then(func5, value5 => {
+        // Do something with value 5
+    });
