@@ -123,3 +123,25 @@ func1(value1)
 new Promise((resolve, reject) =>
     reject(new Error('Failed to fulfill Promise')))
     .catch(reason => console.log(reason));
+
+let urls = [
+  '/api/commits',
+  '/api/issues/opened',
+  '/api/issues/assigned',
+  '/api/issues/completed',
+  '/api/issues/comments',
+];
+
+let promises = urls.map((url) => {
+  return new Promise((resolve, reject) => {
+    $.ajax({ url: url })
+      .done((data) => {
+        resolve(data);
+      });
+  });
+});
+
+Promise.all(promises)
+  .then((results) => {
+    // Do something with results of all our promises
+ })
