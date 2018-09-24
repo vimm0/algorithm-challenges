@@ -125,23 +125,37 @@ new Promise((resolve, reject) =>
     .catch(reason => console.log(reason));
 
 let urls = [
-  '/api/commits',
-  '/api/issues/opened',
-  '/api/issues/assigned',
-  '/api/issues/completed',
-  '/api/issues/comments',
+    '/api/commits',
+    '/api/issues/opened',
+    '/api/issues/assigned',
+    '/api/issues/completed',
+    '/api/issues/comments',
 ];
 
 let promises = urls.map((url) => {
-  return new Promise((resolve, reject) => {
-    $.ajax({ url: url })
-      .done((data) => {
-        resolve(data);
-      });
-  });
+    return new Promise((resolve, reject) => {
+        $.ajax({url: url})
+            .done((data) => {
+                resolve(data);
+            });
+    });
 });
 
 Promise.all(promises)
-  .then((results) => {
-    // Do something with results of all our promises
- })
+    .then((results) => {
+        // Do something with results of all our promises
+    })
+
+// Generator
+function* sillyGenerator() {
+    yield 1;
+    yield 2;
+    yield 3;
+    yield 4;
+}
+
+var generator = sillyGenerator();
+console.log(generator.next()); // { value: 1, done: false }
+console.log(generator.next()); // { value: 2, done: false }
+console.log(generator.next()); // { value: 3, done: false }
+console.log(generator.next()); // { value: 4, done: false }
