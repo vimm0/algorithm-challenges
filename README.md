@@ -1,1 +1,2 @@
-https://realpython.com/documenting-python-code/
+- https://realpython.com/documenting-python-code/
+- https://realpython.com/comparing-python-command-line-parsing-libraries-argparse-docopt-click/
